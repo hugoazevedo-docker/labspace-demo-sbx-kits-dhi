@@ -1,4 +1,4 @@
-schemaVersion: "1"
+schemaVersion: "2"
 kind: mixin
 name: container-best-practices
 displayName: Container Best Practices
@@ -8,13 +8,14 @@ description: |
   user, layer caching, .dockerignore, healthcheck, minimal base
   images) and installs hadolint so the agent can lint its own work.
 
-network:
-  allowedDomains:
-    - github.com
-    - "*.githubusercontent.com"
-    - objects.githubusercontent.com
+permissions:
+  network:
+    allow:
+      - github.com
+      - "*.githubusercontent.com"
+      - objects.githubusercontent.com
 
-commands:
+setup:
   install:
     - command: |
         set -eux

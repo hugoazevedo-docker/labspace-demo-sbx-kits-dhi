@@ -52,7 +52,7 @@ rules, and registry access.
 sbx kit inspect ./kits/dhi
 ```
 
-**Point attention to** the kit name, display name, and install/startup
+**Point attention to** the kit name, display name, and policies (network, commands, files)
 steps. This is what SBX applies when `--kit ../../kits/dhi` is added to
 the sandbox command.
 
@@ -60,7 +60,7 @@ the sandbox command.
 cat ./kits/dhi/spec.yaml
 ```
 
-**Point attention to** the DHI CLI install, `network.allowedDomains`, and
+**Point attention to** the DHI CLI install, `permissions.network.allow`, and
 `configure-dhi-auth`. The important demo message is that the sandbox
 gets DHI tooling and placeholder auth config at startup, while the real
 Docker credential stays host-managed and is applied by the proxy.

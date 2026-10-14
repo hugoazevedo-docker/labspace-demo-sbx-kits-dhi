@@ -50,8 +50,8 @@ sbx kit inspect ./kits/container-best-practices
 cat ./kits/container-best-practices/spec.yaml
 ```
 
-**Point attention to** `commands.install`: the kit adds tools at sandbox
-creation. Point at `network.allowedDomains`: the kit also defines what
+**Point attention to** `setup.install.command`: the kit adds tools at sandbox
+creation. Point at `permissions.network.allow`: the kit also defines what
 this agent setup can reach. Later, the DHI kit uses proxy-managed
 credentials, where the real secret stays on the host and the sandbox
 only sees placeholders.

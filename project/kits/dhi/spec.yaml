@@ -7,20 +7,21 @@ description: |
   Installs the DHI CLI (`dhictl` and `docker dhi`) and writes Docker
   auth placeholders for Docker Hub and dhi.io.
 
-network:
-  allowedDomains:
-    - github.com
-    - api.github.com
-    - "*.githubusercontent.com"
-    - objects.githubusercontent.com
-    - release-assets.githubusercontent.com
-    - dhi.io
-    - api.docker.com
-    - hub.docker.com
-    - "*.docker.com"
-    - "*.docker.io"
+permissions:
+  network:
+    allow:
+      - github.com
+      - api.github.com
+      - "*.githubusercontent.com"
+      - objects.githubusercontent.com
+      - release-assets.githubusercontent.com
+      - dhi.io
+      - api.docker.com
+      - hub.docker.com
+      - "*.docker.com"
+      - "*.docker.io"
 
-commands:
+setup:
   install:
     - command: |
         set -eu
